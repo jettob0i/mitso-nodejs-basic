@@ -6,17 +6,15 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const remove = async () => {
-    const filePath = join(__dirname, 'files', 'fileToRemove.txt');
+  const filePath = join(__dirname, 'files', 'fileToRemove.txt');
 
-    try {
-
-        await fs.access(filePath);
-
-        await fs.unlink(filePath);
-    } catch (err) {
-        throw new Error('FS operation failed');
-    }
+  try {
+    await fs.access(filePath);
+    await fs.unlink(filePath);
+    console.log("файл удалён\n");
+  } catch {
+    console.log("FS operation failed");
+  }
 };
 
-await remove();
 await remove();

@@ -5,6 +5,7 @@ const parseEnv = () => {
         .join('; ');
 
     console.log(envVars);
+
 };
 
 parseEnv();
